@@ -6,6 +6,8 @@ package com.anas;
  */
 
 
+import java.util.List;
+
 public class Calculator {
 
     public int add(int a, int b) {
@@ -31,6 +33,15 @@ public class Calculator {
 
     public int divide(int a, int b) {
         return a / b;
+    }
+
+    public int addAll(List input){
+
+    }
+
+
+    public int multiplyAll(List input){
+
     }
 
     public static void main(String[] args) {
