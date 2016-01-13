@@ -6,6 +6,7 @@ package com.anas;
  */
 
 /*Imported from Java Library*/
+import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
@@ -32,26 +33,31 @@ public class Calculator {
      * @return
      */
 
-    public float divide(float a, float b) {
-        if(b == 0) {
-            System.out.println("b cannot be 0 please enter another value");
-            return -1;
+    public int divide(int a, int b) {
+        int result = 0;
+        try {
+            result = a/b;
+        } catch (ArithmeticException e) {
+            System.out.println("Division by zero not Possible!");
         }
-        else {
-            return a / b;
-        }
+        return result;
     }
 
     public int addAll(List input){
-
-        return -1;
-
+        int result = 0;
+        for (int i = 0; i < input.size(); i++) {
+            result += (Integer)input.get(i);
+        }
+        return result;
     }
 
 
     public int multiplyAll(List input){
-
-        return -1;
+        int result = 1;
+        for (int i = 0; i < input.size(); i++) {
+            result *= (Integer)input.get(i);
+        }
+        return result;
 
     }
 
@@ -61,10 +67,17 @@ public class Calculator {
         System.out.println("2 + 2 = " + calculator.add(2.3f, 2.3f));
         System.out.println("2 - 2 = " + calculator.subtract(2.6f, 2.4f));
         System.out.println("2 * 2 = " + calculator.multiply(2.6f, 2.2f));
-        /*System.out.println("2 divided by 2 = " + calculator.divide(2, 0)); */
+        System.out.println("2 divided by 2 = " + calculator.divide(2, 0));
 
-        /* Storing divide in a variable so that we can control it later however we want using if/else conditions */
-        float result = calculator.divide(2.5f, 0.0f);
-        System.out.println("2 divided by 2 = " + result);
+        List<Integer> numbersList = new ArrayList<Integer>();
+        numbersList.add(1);
+        numbersList.add(2);
+        numbersList.add(3);
+        numbersList.add(4);
+        numbersList.add(5);
+
+        System.out.println("Sum of all numbers =  " + calculator.addAll(numbersList));
+        System.out.println("Product of all numbers =  " + calculator.multiplyAll(numbersList));
+
     }
 }
