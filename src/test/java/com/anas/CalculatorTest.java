@@ -58,8 +58,5 @@ public class CalculatorTest {
 
     }
 
-    @Test
-    public void testMain() throws Exception {
 
-    }
 }
