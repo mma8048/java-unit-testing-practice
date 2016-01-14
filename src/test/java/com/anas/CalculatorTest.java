@@ -23,8 +23,8 @@ public class CalculatorTest {
     public void testAddition() {
         assertEquals("Incorrect result from adding two numbers", 2.0, calculator.add(1.0, 1.0), 0.0);
         assertEquals("Incorrect result from adding positive and negative numbers", 0.0, calculator.add(-1.0, 1.0), 0.0);
-        assertEquals("Addition with 0 didnt not return correct result", 1.0, calculator.add(0, 1.0), 0.0);
-        assertEquals("Addition with 0 didnt not return correct result", 1.0, calculator.add(1.0, 0), 0.0);
+        assertEquals("Addition with 0 did not return correct result", 1.0, calculator.add(0, 1.0), 0.0);
+        assertEquals("Addition with 0 did not return correct result", 1.0, calculator.add(1.0, 0), 0.0);
     }
 
     @Test(expected = IllegalArgumentException.class)
