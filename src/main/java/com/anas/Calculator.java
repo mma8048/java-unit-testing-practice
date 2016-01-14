@@ -12,14 +12,19 @@ import java.util.List;
 public class Calculator {
 
     /*int is changed to float to enable decimal numbers*/
-    public float add(float a, float b) {
-        return a + b;
+    public double add(double a, double b) {
+        if (a == Double.MAX_VALUE || b == Double.MAX_VALUE) {
+            throw new IllegalArgumentException("a or b cannot be equal to " + Double.MAX_VALUE);
+        }
+        final double result = a + b;
+        return result;
     }
 
-    public float subtract(float a, float b) {
+    public double subtract(double a, double b) {
         return a - b;
     }
-    public float multiply(float a, float b) {
+
+    public double multiply(double a, double b) {
         return a * b;
     }
 
