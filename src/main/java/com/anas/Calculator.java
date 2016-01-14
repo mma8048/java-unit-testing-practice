@@ -24,23 +24,13 @@ public class Calculator {
     }
 
 
-    /*
-     * rule 1 => b cannot be 0
-     * rule 2  must return int
-     *
-     * @param a
-     * @param b
-     * @return
-     */
 
     public int divide(int a, int b) {
-        int result = 0;
-        try {
-            result = a/b;
-        } catch (ArithmeticException e) {
-            System.out.println("Division by zero not Possible!");
+        if (b == 0) {
+            throw new IllegalArgumentException("b cannot be null");
         }
-        return result;
+
+        return a / b;
     }
 
     public int addAll(List input){
